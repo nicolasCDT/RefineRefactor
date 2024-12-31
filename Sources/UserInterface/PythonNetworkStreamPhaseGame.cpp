@@ -13,8 +13,8 @@ bool CPythonNetworkStream::SendRefinePacket(BYTE byPos, BYTE byType, BYTE byInde
 	kRefinePacket.type = byType;
 	kRefinePacket.index = byIndex;
 
-		if (!Send(sizeof(kRefinePacket), &kRefinePacket))
-			return false;
+	if (!Send(sizeof(kRefinePacket), &kRefinePacket))
+		return false;
 
 	return SendSequence();
 }
@@ -25,9 +25,6 @@ bool CPythonNetworkStream::SendRefinePacket(BYTE byPos, BYTE byType)
 	kRefinePacket.header = HEADER_CG_REFINE;
 	kRefinePacket.pos = byPos;
 	kRefinePacket.type = byType;
-
-	kRefinePacket.index = bIndex
-
 
 	if (!Send(sizeof(kRefinePacket), &kRefinePacket))
 		return false;
